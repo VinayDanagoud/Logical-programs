@@ -1,12 +1,18 @@
-﻿Console.WriteLine("Welcome to Coupan Number");
-Random random = new Random();
-
-var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-var stringChars = new char[6];
-
-for (int i = 0; i < stringChars.Length; i++)
+﻿Console.WriteLine("Welcome to Prime Number");
 {
-    stringChars[i] = chars[random.Next(chars.Length)];
-    Console.WriteLine(" Coupon Number " + stringChars[i]);
+    int n, i, m = 0, sum = 0;
+    Console.Write("Enter the Number to check Prime: ");
+    n = Convert.ToInt32(Console.ReadLine());
+    m = n / 2;
+    for (i = 2; i <= m; i++)
+    {
+        if (n % i == 0)
+        {
+            Console.Write("Number is not Prime.");
+            sum = 1;
+            break;
+        }
+    }
+    if (sum == 0)
+        Console.Write("Number is Prime.");
 }
