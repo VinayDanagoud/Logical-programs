@@ -1,39 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿Console.WriteLine("Welcome to Coupan Number");
+Random random = new Random();
 
-namespace LogicalProg
+var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+var stringChars = new char[6];
+
+for (int i = 0; i < stringChars.Length; i++)
 {
-    class Perfect
-    {
-        public void Test()
-        {
-            {
-                int n, sum = 0; //Declaring Variables
-                Console.Write("Enter the Number : ");
-                int number = int.Parse(Console.ReadLine());
-                n = number;
-
-                //for loop
-                for (int i = 1; i < number; i++)
-                {
-                    if (number % i == 0)
-                    {
-                        sum = sum + i;
-                    }
-                }
-                if (sum == n)
-                {
-                    Console.WriteLine(number + "  is a perfect number");
-                }
-                else
-                {
-                    Console.WriteLine(number + " is not a perfect number");
-                }
-                Console.ReadLine();
-            }
-        }
-    }
+    stringChars[i] = chars[random.Next(chars.Length)];
+    Console.WriteLine(" Coupon Number " + stringChars[i]);
 }
