@@ -1,19 +1,27 @@
-﻿Console.WriteLine("Welcome to Fibonacci Series");
-
-
+﻿using System;
+using System.Diagnostics;
+using System.Threading;
+class Program
 {
-    int n1 = 0,
-    n2 = 1,
-    n3, i,
-    number;
-    Console.Write("Enter the number of elements: ");
-    number = Convert.ToInt32(Console.ReadLine());
-    Console.Write(n1 + " " + n2 + " "); //printing 0 and 1    
-    for (i = 2; i < number; ++i) //loop starts from 2 because 0 and 1 are already printed    
+    static void Main()
     {
-        n3 = (n1 + n2);
-        Console.Write(n3 + " ");
-        n1 = n2;
-        n2 = n3;
+
+        // Create new stopwatch.
+        Stopwatch stopwatch = new Stopwatch();
+
+        Console.WriteLine("Starting Time ");
+        stopwatch.Start();
+
+        // Do something.
+        for (int i = 0; i < 1000; i++)
+        {
+            Thread.Sleep(5);
+        }
+
+        Console.WriteLine("Time stopped");
+        stopwatch.Stop();
+
+        // Write result.
+        Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
     }
 }
